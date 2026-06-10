@@ -2,7 +2,7 @@ const https = require("https");
 
 const SENDGRID_KEY = process.env.SENDGRID_API_KEY;
 const TO_EMAIL = "jon@mn-micro.com";
-const FROM_EMAIL = "noreply@mn-micro.com";
+const FROM_EMAIL = "oscarbak2000@gmail.com";
 
 function sendEmail(payload) {
   return new Promise((resolve, reject) => {

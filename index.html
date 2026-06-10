@@ -2223,6 +2223,9 @@ footer{
           <p>Thanks — M5 typically replies within one business day. If urgent, call <strong>(952) 261-9804</strong> directly.</p>
           <a href="#hero" class="btn-ghost" style="margin-top:8px">Back to top</a>
         </div>
+        <div id="rfq-error" style="display:none;margin-top:12px;padding:14px 18px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;color:#b91c1c;font-size:14px;text-align:center">
+          Something went wrong sending your request. Please call <strong>(952) 261-9804</strong> or email <a href="mailto:jon@mn-micro.com" style="color:#b91c1c">jon@mn-micro.com</a> directly.
+        </div>
       </div>
     </div>
   </div>
@@ -2569,9 +2572,12 @@ function rfqNext(){
     document.getElementById('rfq-back').style.display='block';
     if(rfqStep===3)document.getElementById('rfq-next').textContent='Submit RFQ →';
   } else {
+    const btn=document.getElementById('rfq-next');
+    btn.disabled=true;
+    btn.textContent='Sending…';
     const fileInput=document.getElementById('rfq-files');
     const fileList=fileInput&&fileInput.files.length?Array.from(fileInput.files):[];
-    const toBase64=f=>new Promise(res=>{const r=new FileReader();r.onload=e=>res({name:f.name,mimeType:f.type||'application/octet-stream',base64:e.target.result.split(',')[1]});r.readAsDataURL(f);});
+    const toBase64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>res({name:f.name,mimeType:f.type||'application/octet-stream',base64:e.target.result.split(',')[1]});r.onerror=rej;r.readAsDataURL(f);});
     Promise.all(fileList.map(toBase64)).then(files=>{
       const payload={
         firstName:document.getElementById('rfq-fname').value.trim(),
@@ -2588,11 +2594,18 @@ function rfqNext(){
         source:document.getElementById('rfq-source').value,
         files
       };
-      fetch('/.netlify/functions/rfq-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
-    }).catch(()=>{});
-    document.getElementById('rfq-form-body').style.display='none';
-    document.getElementById('rfq-steps').style.display='none';
-    document.getElementById('rfq-success').classList.add('visible');
+      return fetch('/.netlify/functions/rfq-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    }).then(res=>{
+      if(!res||!res.ok) throw new Error('Server error');
+      document.getElementById('rfq-form-body').style.display='none';
+      document.getElementById('rfq-steps').style.display='none';
+      document.getElementById('rfq-success').classList.add('visible');
+    }).catch(()=>{
+      btn.disabled=false;
+      btn.textContent='Submit RFQ →';
+      const errEl=document.getElementById('rfq-error');
+      if(errEl){errEl.style.display='block';}
+    });
   }
 }
 function rfqFileChange(input){

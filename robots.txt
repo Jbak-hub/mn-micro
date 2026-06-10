@@ -56,4 +56,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://m5micromolding.com/sitemap.xml
+Sitemap: https://mn-micro.com/sitemap.xml

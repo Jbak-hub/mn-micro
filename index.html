@@ -1919,7 +1919,7 @@ footer{
   <div class="section-inner">
     <div class="section-tag reveal">GALLERY</div>
     <h2 class="section-title reveal reveal-delay-1">Inside M5</h2>
-    <p class="section-sub reveal reveal-delay-2">A look at the shop floor, the machines, and the work — drop photos (photo-1.jpg … photo-4.jpg) and videos (video-1.mp4 … video-4.mp4) into the project folder and they'll appear here automatically.</p>
+    <p class="section-sub reveal reveal-delay-2">A look at the shop floor, the machines, and the work — real parts, real equipment, straight from the Hutchinson, MN shop floor.</p>
     <div class="gallery-tabs reveal reveal-delay-3">
       <button class="gallery-tab active" onclick="filterGallery('all')">All</button>
       <button class="gallery-tab" onclick="filterGallery('photo')">Photos</button>
@@ -2195,7 +2195,7 @@ footer{
           </div>
           <div class="rfq-page" id="rfq-p2">
             <div class="rfq-field full"><label>Industry</label><select class="rfq-select" id="rfq-industry"><option value="">Select industry…</option><option>Medical Devices</option><option>Fiber-Optic / Photonics</option><option>Microfluidics / Diagnostics</option><option>Drug Delivery</option><option>Aerospace &amp; Defense</option><option>Electronics / Connectors</option><option>Other</option></select></div>
-            <div class="rfq-field full"><label>Primary capability needed</label><select class="rfq-select" id="rfq-capability"><option value="">Select capability…</option><option>Micro Injection Molding</option><option>5-Axis Micro Machining</option><option>Overmolding / Insert Molding</option><option>Wire EDM</option><option>Small-Hole EDM</option><option>Overmolding / Insert Molding</option><option>Metrology / Inspection</option><option>Not sure — need DFM review</option></select></div>
+            <div class="rfq-field full"><label>Primary capability needed</label><select class="rfq-select" id="rfq-capability"><option value="">Select capability…</option><option>Micro Injection Molding</option><option>5-Axis Micro Machining</option><option>Overmolding / Insert Molding</option><option>Wire EDM</option><option>Small-Hole EDM</option><option>Metrology / Inspection</option><option>Not sure — need DFM review</option></select></div>
             <div class="rfq-row"><div class="rfq-field"><label>Annual volume</label><select class="rfq-select" id="rfq-volume"><option value="">Select…</option><option>Prototype / NPI</option><option>1 – 10K pcs/yr</option><option>10K – 100K pcs/yr</option><option>100K+ pcs/yr</option></select></div><div class="rfq-field"><label>Timeline</label><select class="rfq-select" id="rfq-timeline"><option value="">Select…</option><option>ASAP / urgent</option><option>Within 4 weeks</option><option>1–3 months</option><option>Planning phase</option></select></div></div>
           </div>
           <div class="rfq-page" id="rfq-p3">
@@ -2283,7 +2283,6 @@ themeBtn.addEventListener('click',()=>{
   document.documentElement.setAttribute('data-theme',t);
   localStorage.setItem('m5-theme',t);
   updateThemeIcon();
-  initCanvas();
 });
 
 /* ── LOADER ── */
@@ -2467,10 +2466,6 @@ document.getElementById('ind-tabs').addEventListener('mouseover',e=>selectIndust
 
 /* ── EQUIPMENT CARDS ── */
 function toggleEq(header){header.closest('.eq-card').classList.toggle('open');}
-document.querySelectorAll('.eq-card').forEach(card=>{
-  card.addEventListener('mouseenter',()=>card.classList.add('open'));
-  card.addEventListener('mouseleave',()=>card.classList.remove('open'));
-});
 
 /* ── PART SIZE VISUALIZER ── */
 const vizData=[

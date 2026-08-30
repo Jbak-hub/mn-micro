@@ -1,8 +1,8 @@
-const https = require("https");
+const nodemailer = require("nodemailer");
 
-const SENDGRID_KEY = process.env.SENDGRID_API_KEY;
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const TO_EMAIL = "jon@mn-micro.com";
-const FROM_EMAIL = "oscarbak2000@gmail.com";
 
 function sendEmail(payload) {
   return new Promise((resolve, reject) => {
@@ -71,52 +71,30 @@ function sendEmail(payload) {
   </table>
 </div>`;
 
-    // Build attachments array for SendGrid
     const attachments = files.map(f => ({
-      content: f.base64,
+      content: Buffer.from(f.base64, "base64"),
       filename: f.name,
-      type: f.mimeType || "application/octet-stream",
-      disposition: "attachment",
+      contentType: f.mimeType || "application/octet-stream",
     }));
 
-    const body = JSON.stringify({
-      personalizations: [{ to: [{ email: TO_EMAIL, name: "Jon Baklund" }] }],
-      from: { email: FROM_EMAIL, name: "M5 Micro Website" },
-      reply_to: { email, name },
-      subject: `New RFQ: ${company} — ${capability || industry || "General Inquiry"}`,
-      content: [
-        { type: "text/plain", value: text },
-        { type: "text/html", value: html },
-      ],
-      ...(attachments.length ? { attachments } : {}),
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
     });
 
-    const req = https.request(
-      {
-        hostname: "api.sendgrid.com",
-        path: "/v3/mail/send",
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${SENDGRID_KEY}`,
-          "Content-Type": "application/json",
-          "Content-Length": Buffer.byteLength(body),
-        },
-      },
-      res => {
-        let data = "";
-        res.on("data", d => (data += d));
-        res.on("end", () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            resolve({ ok: true });
-          } else {
-            reject(new Error(`SendGrid ${res.statusCode}: ${data}`));
-          }
-        });
-      }
-    );
-    req.on("error", reject);
-    req.write(body);
-    req.end();
+    transporter
+      .sendMail({
+        from: { address: GMAIL_USER, name: "M5 Micro Website" },
+        to: { address: TO_EMAIL, name: "Jon Baklund" },
+        replyTo: { address: email, name },
+        subject: `New RFQ: ${company} — ${capability || industry || "General Inquiry"}`,
+        text,
+        html,
+        ...(attachments.length ? { attachments } : {}),
+      })
+      .then(() => resolve({ ok: true }), reject);
   });
 }
 
@@ -141,8 +119,8 @@ exports.handler = async (event) => {
     return { statusCode: 405, headers: cors, body: JSON.stringify({ error: "POST only" }) };
   }
 
-  if (!SENDGRID_KEY) {
-    console.error("SENDGRID_API_KEY not set");
+  if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
+    console.error("GMAIL_USER / GMAIL_APP_PASSWORD not set");
     return { statusCode: 500, headers: cors, body: JSON.stringify({ error: "Server configuration error" }) };
   }
 

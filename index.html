@@ -1195,17 +1195,25 @@ footer{
         }
       ],
       "knowsAbout": [
-        "micro injection molding",
-        "5-axis micro machining",
-        "micron tolerance machining",
-        "fiber optic ferrules",
-        "medical device components",
-        "wire EDM"
+       "micro injection molding",
+       "metal injection molding (MIM)",
+       "MIM stainless steel (17-4 PH, 316L)",
+       "MIM titanium (Ti-6Al-4V)",
+       "MIM cobalt chrome (CoCrMo, ASTM F75)",
+       "MIM low-alloy and tool steels",
+       "5-axis micro machining",
+       "micron tolerance machining",
+       "fiber optic ferrules",
+       "medical device components",
+       "wire EDM"
       ],
       "makesOffer": [
-        {
-          "@id": "https://mn-micro.com/#service-micro-injection-molding"
-        },
+       {
+        "@id": "https://mn-micro.com/#service-micro-injection-molding"
+       },
+       {
+        "@id": "https://mn-micro.com/#service-metal-injection-molding"
+       },
         {
           "@id": "https://mn-micro.com/#service-5-axis-micro-machining"
         },
@@ -1233,7 +1241,33 @@ footer{
       "@type": "Service",
       "@id": "https://mn-micro.com/#service-micro-injection-molding",
       "name": "Micro Injection Molding",
-      "description": "Micro injection molding with shot sizes from 0.0001 g to 0.6 g, running thermoplastics and metal injection molding (MIM). Includes overmolding, insert molding, and dual-shot (2K) molding. Gage-quality molds machined in-house; medical-grade materials available.",
+      "description": "Micro injection molding with shot sizes from 0.0001 g to 0.6 g, running engineering thermoplastics (including PEEK) and metal injection molding (MIM) in stainless steel, steel, titanium, and cobalt chrome. Includes overmolding, insert molding, and dual-shot (2K) molding. Gage-quality molds machined in-house; medical-grade materials available.",
+      "provider": {
+        "@id": "https://mn-micro.com/#org"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mn-micro.com/#service-metal-injection-molding",
+      "name": "Metal Injection Molding (MIM)",
+      "description": "Micro-scale metal injection molding (MIM) run on the same press platform as thermoplastic molding, with post-sinter 5-axis machining available. MIM materials: stainless steel (17-4 PH, 316L and other austenitic and precipitation-hardening grades), low-alloy and tool steels, titanium (Ti-6Al-4V), and cobalt chrome (CoCrMo, ASTM F75). Additional MIM feedstocks on request. Wall sections down to 0.010 in; medical, orthopedic, and photonics components.",
+      "serviceType": "Metal injection molding",
+      "additionalProperty": [
+        {"@type": "PropertyValue", "name": "MIM material", "value": "Stainless steel (17-4 PH, 316L)"},
+        {"@type": "PropertyValue", "name": "MIM material", "value": "Low-alloy and tool steels"},
+        {"@type": "PropertyValue", "name": "MIM material", "value": "Titanium (Ti-6Al-4V)"},
+        {"@type": "PropertyValue", "name": "MIM material", "value": "Cobalt chrome (CoCrMo, ASTM F75)"}
+      ],
       "provider": {
         "@id": "https://mn-micro.com/#org"
       },
@@ -1398,7 +1432,15 @@ footer{
           "name": "What materials does M5 work with?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Engineering thermoplastics including PEEK, plus metal injection molding (MIM) materials including cobalt chrome and stainless steel. The 5-axis also machines hardened tool steels and exotic alloys."
+            "text": "Engineering thermoplastics including PEEK, plus metal injection molding (MIM) in stainless steel (17-4 PH, 316L), low-alloy and tool steels, titanium (Ti-6Al-4V), and cobalt chrome (CoCrMo). Additional MIM alloys on request. The 5-axis also machines hardened tool steels and exotic alloys."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What metals can M5 injection mold (MIM)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "M5 runs MIM at micro scale in stainless steel (17-4 PH and 316L), low-alloy and tool steels, titanium (Ti-6Al-4V), and cobalt chrome (CoCrMo, ASTM F75), with wall sections down to 0.010 in. Other MIM feedstocks are available on request. Parts can be 5-axis machined after sintering for micron-level features."
           }
         },
         {
@@ -2283,7 +2325,11 @@ footer{
       </details>
       <details class="faq-item" open>
         <summary class="faq-q">What materials does M5 work with?</summary>
-        <div class="faq-a">Engineering thermoplastics including <strong>PEEK</strong>, plus metal injection molding (MIM) materials including <strong>cobalt chrome</strong> and stainless steel. The 5-axis also machines hardened tool steels and exotic alloys.</div>
+        <div class="faq-a">Engineering thermoplastics including <strong>PEEK</strong>, plus metal injection molding (MIM) in <strong>stainless steel</strong> (17-4 PH, 316L), low-alloy and tool <strong>steels</strong>, <strong>titanium</strong> (Ti-6Al-4V), and <strong>cobalt chrome</strong> (CoCrMo). Additional MIM alloys on request. The 5-axis also machines hardened tool steels and exotic alloys.</div>
+      </details>
+      <details class="faq-item" open>
+        <summary class="faq-q">What metals can M5 injection mold (MIM)?</summary>
+        <div class="faq-a">M5 runs MIM at micro scale in <strong>stainless steel</strong> (17-4 PH and 316L), low-alloy and tool steels, <strong>titanium</strong> (Ti-6Al-4V), and <strong>cobalt chrome</strong> (CoCrMo, ASTM F75), with wall sections down to .010". Other MIM feedstocks are available on request. Parts can be 5-axis machined after sintering for micron-level features.</div>
       </details>
       <details class="faq-item" open>
         <summary class="faq-q">What industries does M5 serve?</summary>

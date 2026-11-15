@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M5 Micro</title>
+<title>Micro Molding &amp; Micro Machining | M5 Micro | Hutchinson, MN</title>
 <meta name="description" content="Precision micro injection molding from 0.0001 g shots and 5-axis micro-machining with micron tolerances. Medical device and fiber optic components. Patented M5iE system.">
 <meta name="keywords" content="micro injection molding, micro molding, micro machining, 5-axis micro machining, MIM metal injection molding, microfluidics, fiber optic ferrules, medical micro parts, smallest shot size, PEEK molding, KERN Micro Vario, Hutchinson MN manufacturer">
 <meta name="robots" content="index, follow">
@@ -12,13 +12,13 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mn-micro.com/">
-<meta property="og:title" content="M5 Micro">
+<meta property="og:title" content="Micro Molding &amp; Micro Machining | M5 Micro | Hutchinson, MN">
 <meta property="og:description" content="Precision micro injection molding from 0.0001 g shots and 5-axis micro-machining with micron tolerances. Medical device and fiber optic components. Patented M5iE system.">
 <meta property="og:image" content="https://mn-micro.com/photo-1.jpg">
 <meta property="og:site_name" content="mn-micro.com">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="M5 Micro">
+<meta name="twitter:title" content="Micro Molding &amp; Micro Machining | M5 Micro | Hutchinson, MN">
 <meta name="twitter:description" content="Precision micro injection molding from 0.0001 g shots and 5-axis micro-machining with micron tolerances. Medical device and fiber optic components. Patented M5iE system.">
 <meta name="twitter:image" content="https://mn-micro.com/photo-1.jpg">
 <link rel="icon" type="image/png" href="logo.png">
@@ -125,6 +125,7 @@ section{position:relative}
 .loader-logo-text span{color:var(--blue)}
 .loader-bar{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
 .loader-bar-inner{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;animation:loaderBar 1.4s var(--ease-out-expo) forwards}
+.loader-label::after{content:'Initializing precision systems…'}
 .loader-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);font-family:'JetBrains Mono',monospace}
 @keyframes loaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @keyframes loaderBar{from{width:0}to{width:100%}}
@@ -495,7 +496,8 @@ body.cursor-hover #cursor-ring{width:48px;height:48px;border-color:rgba(34,211,2
   transform-style:preserve-3d;
   transition:transform 0.6s var(--ease-out-expo);
 }
-.cap-card:hover .cap-card-inner,.cap-card.flipped .cap-card-inner{transform:rotateY(180deg)}
+.cap-card.flipped .cap-card-inner{transform:rotateY(180deg)}
+@media(hover:hover){.cap-card:hover .cap-card-inner{transform:rotateY(180deg)}}
 .cap-front,.cap-back{
   position:absolute;inset:0;
   border-radius:var(--radius-lg);
@@ -1156,8 +1158,12 @@ footer{
         "ManufacturingBusiness"
       ],
       "@id": "https://mn-micro.com/#org",
-      "name": "M5 Micro",
-      "alternateName": "Minnesota Micro Molding, Machining & MFG",
+      "name": "M5 Micro Molding",
+      "legalName": "Minnesota Micro Molding, Machining & MFG",
+      "alternateName": [
+        "M5 Micro",
+        "Minnesota Micro Molding, Machining & Manufacturing"
+      ],
       "url": "https://mn-micro.com/",
       "logo": "https://mn-micro.com/logo.png",
       "image": "https://mn-micro.com/photo-1.jpg",
@@ -1169,12 +1175,29 @@ footer{
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "13835 200th St",
+        "streetAddress": "13835 200th Street",
         "addressLocality": "Hutchinson",
         "addressRegion": "MN",
         "postalCode": "55350",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.9065405,
+        "longitude": -94.2734657
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/m5micro",
+        "https://www.facebook.com/m5micro/"
+      ],
       "telephone": "+1-952-261-9804",
       "email": "jon@mn-micro.com",
       "contactPoint": {
@@ -1500,13 +1523,13 @@ footer{
 <body>
 
 <!-- LOADER -->
-<div id="loader">
+<div id="loader" aria-hidden="true">
   <div class="loader-logo">
     <img src="logo.png" alt="M5" onerror="this.parentElement.innerHTML='<span style=\'font-family:Space Grotesk,sans-serif;font-weight:700;font-size:22px;color:#3b82f6\'>M5</span>'">
   </div>
   <div class="loader-logo-text"><span>M5</span> Micro</div>
   <div class="loader-bar"><div class="loader-bar-inner"></div></div>
-  <div class="loader-label">Initializing precision systems…</div>
+  <div class="loader-label"></div>
 </div>
 
 <!-- SCROLL PROGRESS -->
@@ -1617,7 +1640,7 @@ footer{
       </div>
       <div class="stat-item reveal reveal-delay-4">
         <div class="stat-label">Industries Served</div>
-        <div class="stat-val" data-count="9" data-suffix="+">9+</div>
+        <div class="stat-val" data-count="7" data-suffix="">7</div>
         <div class="stat-sub">Medical, photonics &amp; more</div>
       </div>
     </div>
@@ -1994,7 +2017,7 @@ footer{
   <div class="lights-inner">
     <div class="section-tag" style="justify-content:center">KERN Robotic Cell · Active Since 2020</div>
     <p class="section-sub" style="margin:0 auto;text-align:center;max-width:480px">Our KERN five-axis machining centers with internal pallet loading run inside fully enclosed robotic cells. They don't stop. Not at night, not on weekends.</p>
-    <div class="lights-counter mono reveal" id="lights-counter">—</div>
+    <div class="lights-counter mono reveal" id="lights-counter">60,216</div>
     <div class="lights-unit">cumulative lights-out hours</div>
     <p class="lights-sub reveal reveal-delay-1">Every hour counted above is an hour no human had to stand at the machine. Capacity that ships on time, even when no one's in the building.</p>
   </div>
@@ -2077,6 +2100,10 @@ footer{
 
       <a class="press-card reveal reveal-delay-1" href="https://www.heidenhain.us/resources-and-news/one-micro-step-for-m5-one-giant-leap-for-healthcare/" target="_blank" rel="noopener"><div class="press-pub">HEIDENHAIN</div><div class="press-headline">"One Micro Step for M5, One Giant Leap for Healthcare"</div><div class="press-arrow">Read article →</div></a>
       <a class="press-card reveal reveal-delay-2" href="https://www.mmsonline.com/articles/4-takeaways-for-shops-new-to-micromachining" target="_blank" rel="noopener"><div class="press-pub">Modern Machine Shop</div><div class="press-headline">"4 Takeaways for Shops New to Micromachining"</div><div class="press-arrow">Read article →</div></a>
+      <a class="press-card reveal reveal-delay-1" href="https://www.mmsonline.com/articles/for-this-machine-shop-licensing-is-the-answer-to-the-inventors-dilemma" target="_blank" rel="noopener"><div class="press-pub">Modern Machine Shop</div><div class="press-headline">"For This Machine Shop, Licensing Is the Answer to the Inventor’s Dilemma"</div><div class="press-arrow">Read article →</div></a>
+      <a class="press-card reveal reveal-delay-2" href="https://www.ptonline.com/articles/for-this-machine-shop-licensing-is-the-answer-to-the-inventors-dilemma-2" target="_blank" rel="noopener"><div class="press-pub">Plastics Technology</div><div class="press-headline">"Innovative Micro-Molding From Minnesota Machine Shop"</div><div class="press-arrow">Read article →</div></a>
+      <a class="press-card reveal reveal-delay-1" href="https://moldmakingtechnology.com/articles/control-helps-push-the-limits-of-five-axis-micro-mold-machining-accuracy" target="_blank" rel="noopener"><div class="press-pub">MoldMaking Technology</div><div class="press-headline">"Control Helps Push the Limits of Five-Axis Micro Mold Machining Accuracy"</div><div class="press-arrow">Read article →</div></a>
+      <a class="press-card reveal reveal-delay-2" href="https://mtdcnc.com/case-studies/mtdcnc/micromachine-medical-parts-made-on-kern-m5" target="_blank" rel="noopener"><div class="press-pub">MTDCNC</div><div class="press-headline">"Micromachine Medical Parts Made on Kern"</div><div class="press-arrow">Read article →</div></a>
     </div>
   </div>
 </section>
@@ -2122,7 +2149,7 @@ footer{
         <img src="photo-1.jpg" alt="MIM Cobalt Chrome part on fingertip" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-1.jpg<br>MIM CoCr on fingertip</div>
+          <div class="gallery-placeholder-label">MIM CoCr on fingertip</div>
         </div>
       </div>
 
@@ -2139,7 +2166,7 @@ footer{
         <img src="photo-2.jpg" alt="MIM Cobalt Chrome cone surface" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-2.jpg<br>MIM CoCr cone close-up</div>
+          <div class="gallery-placeholder-label">MIM CoCr cone close-up</div>
         </div>
       </div>
 
@@ -2148,7 +2175,6 @@ footer{
         <video src="video-1.mp4" autoplay loop muted playsinline preload="auto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <div class="gallery-placeholder-label">Drop video-1.mp4<br>into the project folder</div>
         </div>
         <div class="gallery-play-btn"><svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.15)"/><polygon points="21,16 38,26 21,36" fill="white"/></svg></div>
       </div>
@@ -2157,16 +2183,16 @@ footer{
         <img src="photo-3.jpg" alt="Overmolded spring .060 dia under microscope" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-3.jpg<br>Overmolded spring .060"</div>
+          <div class="gallery-placeholder-label">Overmolded spring .060"</div>
         </div>
       </div>
 
       <!-- Row 2 -->
       <div class="gallery-item reveal" data-type="photo" onclick="openLightbox('photo','photo-4.jpg','gallery-grid')">
-        <img src="photo-4.jpg" alt="Micro MIM Cobalt Chrome Ortho Anchor on fingertip" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="photo-4.jpg" alt="Micro molded part, 0.0001 gram mass, next to a fingertip" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-4.jpg<br>Micro MIM Ortho Anchor</div>
+          <div class="gallery-placeholder-label">0.0001 g micro molded part</div>
         </div>
       </div>
 
@@ -2174,7 +2200,7 @@ footer{
         <img src="photo-5.jpg" alt="Molded brain stent delivery tube PEEK on penny" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-5.jpg<br>PEEK brain stent tube</div>
+          <div class="gallery-placeholder-label">PEEK brain stent tube</div>
         </div>
       </div>
 
@@ -2182,7 +2208,7 @@ footer{
         <img src="photo-6.jpg" alt="MIM Cobalt Chrome .010 thinnest wall on penny" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-6.jpg<br>MIM CoCr .010" wall</div>
+          <div class="gallery-placeholder-label">MIM CoCr .010" wall</div>
         </div>
       </div>
 
@@ -2200,7 +2226,6 @@ footer{
         <video src="video-2.mp4" autoplay loop muted playsinline preload="auto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <div class="gallery-placeholder-label">Drop video-2.mp4<br>into the project folder</div>
         </div>
         <div class="gallery-play-btn"><svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.15)"/><polygon points="21,16 38,26 21,36" fill="white"/></svg></div>
       </div>
@@ -2210,7 +2235,7 @@ footer{
         <img src="photo-7.jpg" alt="Micro machined PEEK prototype next to quarter" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-7.jpg<br>Micro machined PEEK</div>
+          <div class="gallery-placeholder-label">Micro machined PEEK</div>
         </div>
       </div>
 
@@ -2218,7 +2243,7 @@ footer{
         <img src="photo-8.jpg" alt="Micro mold insert 8 x .005 diameter holes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <div class="gallery-placeholder-label">photo-8.jpg<br>Mold insert 8×.005" holes</div>
+          <div class="gallery-placeholder-label">Mold insert 8×.005" holes</div>
         </div>
       </div>
 
@@ -2258,7 +2283,6 @@ footer{
         <video src="video-3.mp4" autoplay loop muted playsinline preload="auto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
         <div class="gallery-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <div class="gallery-placeholder-label">Drop video-3.mp4<br>into the project folder</div>
         </div>
         <div class="gallery-play-btn"><svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.15)"/><polygon points="21,16 38,26 21,36" fill="white"/></svg></div>
       </div>
@@ -2659,6 +2683,7 @@ document.getElementById('ind-tabs').addEventListener('click',e=>selectIndustry(e
 document.getElementById('ind-tabs').addEventListener('mouseover',e=>selectIndustry(e.target.closest('.ind-tab')));
 
 /* ── EQUIPMENT CARDS ── */
+if(window.matchMedia('(hover:none)').matches){document.querySelectorAll('.cap-card').forEach(c=>c.addEventListener('click',e=>{if(!e.target.closest('a'))c.classList.toggle('flipped');}));}
 function toggleEq(header){header.closest('.eq-card').classList.toggle('open');}
 
 /* ── PART SIZE VISUALIZER ── */
